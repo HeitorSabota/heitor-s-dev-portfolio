@@ -3,12 +3,16 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import imgMarketplace from "@/assets/project-marketplace.jpg";
+import imgApi from "@/assets/project-api.jpg";
+import imgDashboard from "@/assets/project-dashboard.jpg";
 
 const projects = [
   {
     title: "Marketplace",
     description: "Plataforma de e-commerce estilo Mercado Livre com listagem de produtos, carrinho de compras e sistema de busca.",
     tags: ["React.JS", "Next.js", "TypeScript", "NoSQL"],
+    image: imgMarketplace,
     demo: "#",
     repo: "#",
   },
@@ -16,6 +20,7 @@ const projects = [
     title: "API Backend",
     description: "API RESTful robusta construída com Express para gerenciamento de dados com autenticação e validação.",
     tags: ["Node.JS", "Express", "SQL", "TypeScript"],
+    image: imgApi,
     demo: "#",
     repo: "#",
   },
@@ -23,6 +28,7 @@ const projects = [
     title: "Dashboard Analytics",
     description: "Painel administrativo com visualização de dados em tempo real, gráficos interativos e relatórios.",
     tags: ["React.JS", "TypeScript", "SASS", "Node.JS"],
+    image: imgDashboard,
     demo: "#",
     repo: "#",
   },
@@ -51,8 +57,8 @@ const ProjectsSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
           >
             <Card className="flex h-full flex-col border-border/50 bg-card/50 backdrop-blur-sm transition-colors hover:border-primary/30">
-              <div className="h-40 rounded-t-lg bg-gradient-to-br from-primary/20 via-accent/10 to-secondary flex items-center justify-center">
-                <span className="font-mono text-2xl text-muted-foreground/50">{"{ }"}</span>
+              <div className="h-40 rounded-t-lg overflow-hidden">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
               </div>
               <CardHeader>
                 <CardTitle className="text-lg">{project.title}</CardTitle>
